@@ -1,0 +1,8 @@
+run/
+gradle/
+out/
+.idea/
+.gradle/
+Botanic Energistics.iml
+Botanic Energistics.ipr
+Botanic Energistics.iws
