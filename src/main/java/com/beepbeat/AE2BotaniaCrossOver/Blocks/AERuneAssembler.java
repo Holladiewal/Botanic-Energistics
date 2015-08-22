@@ -44,6 +44,7 @@ public class AERuneAssembler extends Block {
                 node.setPlayerID(AEApi.instance().registries().players().getID(player));
             }
             node.updateState();
+            
         }
     }
 
