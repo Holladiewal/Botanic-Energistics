@@ -13,13 +13,13 @@ import cpw.mods.fml.common.registry.GameRegistry;
  */
 
 
-@Mod(modid = Reference.MODID, name = Reference.MODNAME)
+@Mod(modid = Reference.MODID, name = Reference.MODNAME, version = "1.0")
 public class AE2BotaniaCrossOver {
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event){
         GameRegistry.registerItem(new RuneAssemblerCraftingPattern(), "RuneAssemblerPattern", Reference.MODID);
-        GameRegistry.registerBlock(new AERuneAssembler(), "AERuneAssembler");
         GameRegistry.registerTileEntity(TileAERuneAssembler.class, "tile.runeassembler");
+        GameRegistry.registerBlock(new AERuneAssembler(), "AERuneAssembler");
     }
 }

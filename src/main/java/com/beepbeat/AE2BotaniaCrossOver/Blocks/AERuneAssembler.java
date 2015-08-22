@@ -3,6 +3,8 @@ package com.beepbeat.AE2BotaniaCrossOver.Blocks;
 import appeng.api.AEApi;
 import appeng.api.networking.IGridNode;
 import appeng.block.AEBaseBlock;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -44,7 +46,6 @@ public class AERuneAssembler extends Block {
                 node.setPlayerID(AEApi.instance().registries().players().getID(player));
             }
             node.updateState();
-            
         }
     }
 
