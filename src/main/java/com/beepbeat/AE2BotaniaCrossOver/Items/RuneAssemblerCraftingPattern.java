@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 /**
- * Created by beebeat on 22.08.2015.
+ * Created by beepbeat on 22.08.2015.
  */
 public class RuneAssemblerCraftingPattern extends Item implements ICraftingPatternDetails, ICraftingPatternItem {
 

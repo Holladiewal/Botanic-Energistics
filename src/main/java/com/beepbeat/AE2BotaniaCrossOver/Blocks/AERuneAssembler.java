@@ -3,9 +3,12 @@ package com.beepbeat.AE2BotaniaCrossOver.Blocks;
 import appeng.api.AEApi;
 import appeng.api.networking.IGridNode;
 import appeng.block.AEBaseBlock;
+import com.beepbeat.AE2BotaniaCrossOver.AE2BotaniaCrossOver;
+import com.beepbeat.AE2BotaniaCrossOver.GUI.GUIHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -16,20 +19,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 
-public class AERuneAssembler extends Block {
+public class AERuneAssembler extends BlockContainer {
 
     public AERuneAssembler() {
         super(Material.iron);
         setBlockName("AE Rune Assembler");
         setCreativeTab(CreativeTabs.tabMisc);
     }
-
-    @Override
-    public TileEntity createTileEntity(World world, int metadata) {
-        return new TileAERuneAssembler();
-    }
-
-
 
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack stack) {
@@ -64,4 +60,17 @@ public class AERuneAssembler extends Block {
         }
     }
 
+
+    @Override
+    public TileEntity createNewTileEntity(World world, int meta) {
+        return new TileAERuneAssembler();
+    }
+
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitx, float hity, float hitz) {
+        if (!world.isRemote){
+            player.openGui(AE2BotaniaCrossOver.instance, GUIHandler.GUIIDs.RuneAssembler.ordinal(), world, x, y, z);
+        }
+        return true;
+    }
 }
